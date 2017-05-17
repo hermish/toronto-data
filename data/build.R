@@ -1,5 +1,3 @@
-# Mapbox, Carto
-
 source("import.R")
 source_name <- "source.txt"
 
