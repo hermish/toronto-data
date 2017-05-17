@@ -4,13 +4,13 @@ row_id,integer
 establishment_id,integer
 inspection_id,integer
 establishment_name,character
-establishmenttype,character
+establishmenttype,factor
 establishment_address,character
-establishment_status,character
+establishment_status,factor
 minimum_inspections_peryear,integer
 infraction_details,character
 inspection_date,character
-severity,character
+severity,factor
 action,character
 court_outcome,character
 amount_fined,character
