@@ -1,0 +1,16 @@
+http://opendata.toronto.ca/public.health/dinesafe/dinesafe.zip
+name,class
+row_id,integer
+establishment_id,integer
+inspection_id,integer
+establishment_name,character
+establishmenttype,character
+establishment_address,character
+establishment_status,character
+minimum_inspections_peryear,integer
+infraction_details,character
+inspection_date,character
+severity,character
+action,character
+court_outcome,character
+amount_fined,character
