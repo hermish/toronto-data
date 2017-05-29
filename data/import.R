@@ -1,5 +1,6 @@
 library("XML")
 library("methods")
+library(dplyr)
 
 download_compressed <- function(address) {
 	temporary <- tempfile()
@@ -11,13 +12,38 @@ download_compressed <- function(address) {
 
 read_xml <- function(connection, col_names, col_types) {
 	factors <- col_types == "factor"
-	col_types[factors] <- "factor"
+	import_types <- col_types
+	import_types[factors] <- "character"
 
 	data <- xmlToDataFrame(connection,
-		colClasses = col_types,
+		colClasses = import_types,
 		stringsAsFactors = FALSE)
 
 	data[factors] <- lapply(data[factors], factor)
 	names(data) <- col_names
 	data
+}
+
+build_database <- function(source_name) {
+  url <- readLines(source_name, n = 1)
+  format <- read.csv(source_name,
+                     skip = 1,
+                     stringsAsFactors = FALSE)
+  
+  col_names <- format[["name"]]
+  col_classes <- format[["class"]]
+  
+  connection <- download_compressed(url)
+  data <- read_xml(connection, col_names, col_classes)
+}
+
+find_locations <- function(data, api_key) {
+  new_info <- c("longitude", "latitude")
+  places <- select(data, establishment_id, establishment_address)
+  places[new_info] <- lookup_coordinates(places[establishment_address])
+  places
+}
+
+lookup_coordinates <- function(address, places) {
+  # Todo
 }

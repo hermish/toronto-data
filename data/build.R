@@ -1,13 +1,10 @@
 source("import.R")
 source_name <- "source.txt"
+raw_output_name <- "dinesafe.rda"
+location_name <- "locations.rda"
 
-url <- readLines(source_name, n = 1)
-format <- read.csv(source_name,
-	skip = 1,
-	stringsAsFactors = FALSE)
+data <- build_databse(source_name)
+save(data, file = raw_output_name)
 
-col_names <- format[["name"]]
-col_classes <- format[["class"]]
-
-connection <- download_compressed(url)
-data <- read_xml(connection, col_names, col_classes)
+locations <- find_locations(data)
+save(locations, file = location_name)
