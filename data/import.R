@@ -29,21 +29,10 @@ build_database <- function(source_name) {
   format <- read.csv(source_name,
                      skip = 1,
                      stringsAsFactors = FALSE)
-  
+
   col_names <- format[["name"]]
   col_classes <- format[["class"]]
-  
+
   connection <- download_compressed(url)
   data <- read_xml(connection, col_names, col_classes)
-}
-
-find_locations <- function(data, api_key) {
-  new_info <- c("longitude", "latitude")
-  places <- select(data, establishment_id, establishment_address)
-  places[new_info] <- lookup_coordinates(places[establishment_address])
-  places
-}
-
-lookup_coordinates <- function(address, places) {
-  # Todo
 }

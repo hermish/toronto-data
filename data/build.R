@@ -1,10 +1,6 @@
-source("import.R")
-source_name <- "source.txt"
-raw_output_name <- "dinesafe.rda"
-location_name <- "locations.rda"
+source("data/import.R")
 
-data <- build_databse(source_name)
-save(data, file = raw_output_name)
+source_name <- "data/source.txt"
 
-locations <- find_locations(data)
-save(locations, file = location_name)
+data <- build_database(source_name)
+write.csv(data, "dinesafe.csv")
