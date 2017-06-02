@@ -1,3 +1,5 @@
+#!/bin/bash
+
 Rscript data/build.R
 export COUCH_URL="https://hermisdm:moonlanding@hermisdm.cloudant.com"
 export COUCH_DATABASE="dinesafe"
