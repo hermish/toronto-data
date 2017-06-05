@@ -22,3 +22,22 @@ install.packages(c("methods", "readr", "XML"))
 Also, ensure the following command line utilities are installed: unzip and the
 MongoDB utilities which can be found
 [here](https://www.mongodb.com/download-center) or installed through Homebrew.
+
+## Literal Files
+The following files must be present in the data folder with the following
+specifications for the script to run.
+
+1. destination.txt
+```
+details to follow
+```
+
+2. format.txt
+```
+details to follow
+```
+
+3. source.txt
+```
+details to follow
+```
