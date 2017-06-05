@@ -20,5 +20,5 @@ install.packages(c("methods", "readr", "XML"))
 ```
 
 Also, ensure the following command line utilities are installed: unzip and the
-MongoDB utilities which can be found [here](https://www.mongodb.com/download-
-center) or installed through Homebrew.
+MongoDB utilities which can be found
+[here](https://www.mongodb.com/download-center) or installed through Homebrew.
