@@ -5,9 +5,10 @@ colname=$(sed -n '3p' < literals/destination.txt)
 dbuser=$(sed -n '4p' < literals/destination.txt)
 dbpassword=$(sed -n '5p' < literals/destination.txt)
 
-mongoimport -h "$server" -u "$dbuser"-p "$dbpassword" \
+mongoimport -h "$server" -u "$dbuser" -p "$dbpassword" \
 	-d "$dbname" -c "$colname" \
-	--file data/dinesafe.csv --type csv --headerline
+	--file "data/dinesafe.csv" \
+	--type csv --headerline
 
 # cat dinesafe.csv | couchimport
 # rm -f dinesafe.xml dinesafe.xip
