@@ -10,5 +10,4 @@ mongoimport -h "$server" -u "$dbuser" -p "$dbpassword" \
 	--file "data/dinesafe.csv" \
 	--type csv --headerline
 
-# cat dinesafe.csv | couchimport
-# rm -f dinesafe.xml dinesafe.xip
+rm -f dinesafe.xml dinesafe.zip

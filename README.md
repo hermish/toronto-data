@@ -16,7 +16,7 @@ for free [here](https://www.r-project.org/). Once R is downloaded, you can
 install the required packages with the following command in the R console:
 
 ```
-install.packages(c("methods", "readr", "XML"))
+install.packages(c("methods", "readr", "XML", "plyr”, “ppls”))
 ```
 
 Also, ensure the following command line utilities are installed: unzip and the
