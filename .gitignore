@@ -12,5 +12,7 @@
 hs_err_pid*
 .Rproj.user
 
-# credentials
-credentials.txt
+# Project Files
+/literals/destination.txt
+/data/dinesafe.xml
+/data/dinesafe.zip
