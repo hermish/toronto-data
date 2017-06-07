@@ -22,3 +22,6 @@ hs_err_pid*
 .Rapp.history
 .RData
 .Rproj.user/
+
+# Outputs
+*.jpg

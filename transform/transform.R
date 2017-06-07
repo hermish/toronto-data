@@ -9,7 +9,7 @@ format <- "literals/format.txt"
 destination <- "data/dinesafe.csv"
 output <- "data/"
 
-# Executes data operations 
+# Executes data operations
 data <- load_xml(file, format)
-analyze(data, destination)
+analyze(data, output)
 export(data, destination)
