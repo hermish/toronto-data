@@ -1,4 +1,5 @@
 #!/bin/bash
+# Runs the entire toolkit, pulling online dinesafe data
 
 sh io/import.sh
 Rscript transform/transform.R
