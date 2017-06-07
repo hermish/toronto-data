@@ -30,7 +30,7 @@ specifications for the scripts to run.
 
 1. destination.txt
 ```
-<mongo_db_server_ocation>
+<mongo_db_server_address>
 <database_name>
 <collection_name>
 <username>
