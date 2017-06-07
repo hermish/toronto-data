@@ -11,13 +11,13 @@ space to allow the data to be download from the city website. In order to
 transform the data provided, R is used; you can download version 3.4.0
 for free [here](https://www.r-project.org/).
 
-Once R is installed, load the R console and runn the following command:
+Once R is installed, load the R console and run the following command:
 
 ```
 install.packages(c("methods", "readr", "XML", "plyr”, “ppls”))
 ```
 
-This makes sure the the perquisite libraries are installed on your system
+This makes sure the the prequisite libraries are installed on your system
 for the tool kit to convert and analyze the data.
 
 Also, ensure the following command line utilities are installed: unzip and
