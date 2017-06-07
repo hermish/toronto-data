@@ -16,3 +16,9 @@ hs_err_pid*
 /literals/destination.txt
 /data/dinesafe.xml
 /data/dinesafe.zip
+
+# RStudio File
+.Rhistory
+.Rapp.history
+.RData
+.Rproj.user/

@@ -21,8 +21,8 @@ This makes sure the the perquisite libraries are installed on your system
 for the tool kit to convert and analyze the data.
 
 Also, ensure the following command line utilities are installed: unzip and
-MongoDB utilities which can be found [here](https://www.mongodb.com/download-
-center) or installed through Homebrew.
+MongoDB utilities which can be found
+[here](https://www.mongodb.com/download-center) or installed through Homebrew.
 
 ## Literal Files
 The following files must be present in the data folder with the following
