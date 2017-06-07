@@ -2,7 +2,7 @@ library("plyr")
 library("ppls")
 
 analyze <- function(data, output) {
-    # High-level function which runs the sample functions which are used to 
+    # High-level function which runs the sample functions which are used to
     # analyze the data provided. This function should be changed to
     # utilize the desired functions for analysis.
     #
@@ -21,14 +21,18 @@ inspection_histogram <- function(data, output) {
     #
     # @param data: the data frame
     # @param output: the output directory
+    # @return: vector of frequencies
 
     freqs <- count(data, "establishment_name")
-    
+    to_plot <- freqs[["freq"]]
+
     # Writes file
     file_output <- paste(output, "inspection_histogram.jpg", sep = "")
     jpeg(file_output)
-    hist(freqs[["freq"]])
+    hist(to_plot)
     dev.off()
+
+    freqs
 }
 
 pie_chart <- function(data, output) {
@@ -37,6 +41,7 @@ pie_chart <- function(data, output) {
     #
     # @param data: the data frame
     # @param output: the output directory
+    # @return: a vector corresponding to the sixe of the slices
 
     results <- count(data, "establishment_status")
     slices <- results[["freq"]]
@@ -45,9 +50,11 @@ pie_chart <- function(data, output) {
     # Writes file
     file_output <- paste(output, "pie_chart.jpg", sep = "")
     jpeg(file_output)
-    pie(slices, labels = lbls, 
+    pie(slices, labels = lbls,
       main = "Inspection Outcomes")
     dev.off()
+
+    slices
 }
 
 pizza_comparison <- function(data, output) {
@@ -58,6 +65,7 @@ pizza_comparison <- function(data, output) {
     #
     # @param data: the data frame
     # @param output: the output directory
+    # @return: a dataframe which represnts the data to be plotted
 
     # Sort out pizza and non-pizza places
     pizza_names <- grep("PIZZA", data[["establishment_name"]], value = TRUE)
@@ -70,12 +78,12 @@ pizza_comparison <- function(data, output) {
     non_pizza_counts <- count(non_pizza_rows, "establishment_status")
     pizza_props <- normalize.vector(pizza_counts[["freq"]])
     non_pizza_props <- normalize.vector(non_pizza_counts[["freq"]])
-    
+
     # Prepares data to be plotted
     to_plot <- rbind(pizza_props, non_pizza_props)
     colnames(to_plot) <- pizza_counts[["establishment_status"]]
     rownames(to_plot) <- c("Pizza", "Other")
-    
+
     # Writes file
     file_output <- paste(output, "comparison.jpg", sep = "")
     jpeg(file_output)
@@ -87,4 +95,6 @@ pizza_comparison <- function(data, output) {
            fill=terrain.colors(length(rownames(to_plot))),
            legend=rownames(to_plot))
     dev.off()
+
+    to_plot
 }
